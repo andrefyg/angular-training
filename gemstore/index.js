@@ -23,6 +23,14 @@
       this.current = current;
     };
   });
+  app.controller('ReviewController', function() {
+    this.review = {};
+    this.addReview = function(product){
+      this.review.createdOn = Date.now();
+      product.reviews.push(this.review);
+      this.review = {};
+    };
+  });
   var gems = [{
       name: 'Azurite',
       description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
@@ -32,9 +40,9 @@
       color: '#CCC',
       faces: 14,
       images: [
-        "images/gem-02.gif",
-        "images/gem-05.gif",
-        "images/gem-09.gif"
+        "images/gem-02.png",
+        "images/gem-05.png",
+        "images/gem-09.png"
       ],
       reviews: [{
         stars: 5,
@@ -56,9 +64,9 @@
       color: '#EEE',
       faces: 12,
       images: [
-        "images/gem-01.gif",
-        "images/gem-03.gif",
-        "images/gem-04.gif"
+        "images/gem-01.png",
+        "images/gem-03.png",
+        "images/gem-04.png"
       ],
       reviews: [{
         stars: 3,
@@ -80,9 +88,9 @@
       color: '#000',
       faces: 6,
       images: [
-        "images/gem-06.gif",
-        "images/gem-07.gif",
-        "images/gem-10.gif"
+        "images/gem-06.png",
+        "images/gem-07.png",
+        "images/gem-10.png"
       ],
       reviews: [{
         stars: 1,
