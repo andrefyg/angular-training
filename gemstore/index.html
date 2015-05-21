@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="thisIssueShouldBeFixed">
+<html ng-app="gemStore">
   <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <title>Adding New title Here</title>
+    <title>Angular Training</title>
 
   </head>
   <body class="container" ng-controller="StoreController as store">
@@ -43,7 +43,13 @@
         </div>
         <div ng-show="tab.isSet(3)">
           <h4>Reviews</h4>
-          <blockquote></blockquote>
+          <li ng-repeat="review in product.reviews">
+               <blockquote>
+                 <strong>{{review.stars}} Stars</strong>
+                 {{review.body}}
+                 <cite class="clearfix">{{review.author}}</cite>
+               </blockquote>
+           </li>
         </div>
       </section>
     </div>
