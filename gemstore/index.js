@@ -14,6 +14,15 @@
     	return this.tab === tab;
     };
   });
+  app.controller('GalleryController', function() {
+  	this.current = 0;
+
+    this.setCurrent = function(current) {
+      if(!current)
+        current = 0;
+      this.current = current;
+    };
+  });
   var gems = [{
       name: 'Azurite',
       description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
