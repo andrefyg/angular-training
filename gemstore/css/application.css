@@ -4,3 +4,7 @@
 .ng-valid.ng-dirty {
 	border-color: green;
 }
+img {
+  height: 64px;
+  width: 64px;
+}
