@@ -4,15 +4,6 @@
   app.controller('StoreController', function(){
     this.products = gems;
   });
-  app.controller('GalleryController', function() {
-  	this.current = 0;
-
-    this.setCurrent = function(current) {
-      if(!current)
-        current = 0;
-      this.current = current;
-    };
-  });
   app.controller('ReviewController', function() {
     this.review = {};
     this.addReview = function(product){
@@ -56,6 +47,19 @@
     return {
       restrict: 'A',
       templateUrl: 'product-specs.html'
+    };
+  });
+  app.directive('productGallery', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'product-gallery.html',
+      controller: function() {
+        this.current = 0;
+        this.setCurrent = function(imageNumber){
+          this.current = imageNumber || 0;
+        };
+      },
+      controllerAs: 'gallery'
     };
   });
   var gems = [{
